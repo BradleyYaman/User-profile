@@ -1,0 +1,46 @@
+from abc import ABC, abstractmethod
+
+# Vehicles Example
+class Vehicle(ABC):
+    @abstractmethod
+    def move(self):
+        pass
+
+class Car(Vehicle):
+    def move(self):
+        return "Car is driving on the road."
+
+class Bicycle(Vehicle):
+    def move(self):
+        return "Bicycle is pedaling on the path."
+
+class Boat(Vehicle):
+    def move(self):
+        return "Boat is sailing on the water."
+
+# User Authentication Example
+class AuthMethod(ABC):
+    @abstractmethod
+    def login(self):
+        pass
+
+class EmailAuth(AuthMethod):
+    def login(self):
+        return "Logging in with email and password."
+
+class GoogleAuth(AuthMethod):
+    def login(self):
+        return "Logging in with Google authentication."
+
+class FingerprintAuth(AuthMethod):
+    def login(self):
+        return "Logging in with fingerprint authentication."
+
+# Testing the functionality
+vehicles = [Car(), Bicycle(), Boat()]
+for vehicle in vehicles:
+    print(vehicle.move())
+
+auth_methods = [EmailAuth(), GoogleAuth(), FingerprintAuth()]
+for method in auth_methods:
+    print(method.login())
